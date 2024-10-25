@@ -1,10 +1,12 @@
 # app.py
 from flask import Flask, json, request, jsonify, send_from_directory
+from flask_cors import CORS
 from src.tokenizer import Tokenizer
 from src.parser import Parser
 from src.errors import TokenizerError, ParserError
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def index():
